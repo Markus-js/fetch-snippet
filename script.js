@@ -27,20 +27,33 @@ function renderSingeElement(data) {
   imgSrc.setAttribute("src", data.img);
 }
 
+// let amount = 3;
+
 // Multiple
 function renderMultipleElements(data) {
   let cardEl = "";
-  console.log(cardContainer);
+
   data.forEach((user, idx) => {
+    // if (idx >= amount) {
+    // } else if (idx === 0) {
+    //   cardEl += `
+    //     <div class="first-card card" id="card">
+    //        <div class="img-wrapper" >
+    //        <img class="image" src="${user.img}" alt="${user.name}" />
+    //        </div>
+    //        <h3>${user.name}</h3>
+    //        <p>Age: ${user.age}</p>
+    //     </div>`;
+    // } else {
     cardEl += `
-    <div class="${idx}  card" id="card">
-       <div class="img-wrapper" >
-       <img class="image" src="${user.img}" alt="${user.name}" />
-       </div>
-       <h3>${user.name}</h3>
-       <p>Age: ${user.age}</p>
-    </div>
-    `;
+        <div class=" card" id="card">
+           <div class="img-wrapper" >
+           <img class="image" src="${user.img}" alt="${user.name}" />
+           </div>
+           <h3>${user.name}</h3>
+           <p>Age: ${user.age}</p>
+        </div>`;
+    // }
   });
   cardContainer.innerHTML = cardEl;
 }
